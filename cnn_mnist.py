@@ -371,7 +371,6 @@ def main():
   
   
   # Check miss-classified images
-  """
   incorrect_list = test_return_incorrect(net, test_loader, criterion, device)
   print(incorrect_list)
   for idx, pred, label in incorrect_list:
@@ -379,11 +378,10 @@ def main():
     plt.imshow(test_set[idx][0].data.squeeze(), cmap='gray')
     plt.savefig("miss-id: {}.png".format(idx))
     plt.show()
-  """
+
   
   
   # Extract feature map
-  """
   fm1, fm2 = test_return_feature(net, test_loader, criterion, device)
   lst = [449, 9400, 3767, 3600, 9792, 3200]
   print(fm1[449][0].shape)
@@ -397,7 +395,7 @@ def main():
       plt.imshow(fm2[i][k].data.squeeze().cpu().data.numpy(), cmap='gray')
       plt.savefig("fm2:{}-{}.png".format(i, k))
       plt.show()
-  """
+
   
 if __name__=="__main__":
   main()
